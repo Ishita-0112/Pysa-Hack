@@ -21,9 +21,12 @@ Please refer to [our CONTRIBUTING.md file](CONTRIBUTING.md).
 ## Local installation for testing purposes
 python setup.py bdist_wheel    
 
+python setup.py bdist_wheel
 pip install -e .
 
 python3
+from PysaCoolCli import starter
+starter()
 
 from PysaCoolCli import starter
 
