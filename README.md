@@ -19,10 +19,11 @@ Please refer to [our CONTRIBUTING.md file](CONTRIBUTING.md).
 ### Installing the package
 
 ## Local installation for testing purposes
+python setup.py bdist_wheel
 pip install -e .
 python3
->>> from PysaCoolCli import starter
->>> starter()
+from PysaCoolCli import starter
+starter()
 
 Our package is publicly available on [PyPi]().
 To install using `pip`, run the command:
