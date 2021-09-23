@@ -19,16 +19,22 @@ Please refer to [our CONTRIBUTING.md file](CONTRIBUTING.md).
 ### Installing the package
 
 ## Local installation for testing purposes
-pip install -e .
-python3
->>> from PysaCoolCli import starter
->>> starter()
+python setup.py bdist_wheel    
 
+pip install -e .
+
+python3
+
+from PysaCoolCli import starter
+
+starter()
+
+## Main Installation
 Our package is publicly available on [PyPi]().
 To install using `pip`, run the command:
 
 ```bash
-    $ pip install 
+    $ pip install PysaCoolCli
 ```
 
 ## Usage
@@ -44,6 +50,9 @@ To install using `pip`, run the command:
 
 ## How we built it
 
+Initial setup
+1. Develop a project structure with setuptools for a simple Python package
+2. Integrate basic Pysa Configs following [link](https://pyre-check.org/docs/pysa-quickstart)
 
 ## Challenges we ran into
 
