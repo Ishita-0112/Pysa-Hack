@@ -1,2 +1,3 @@
+
 from django.http import HttpRequest, HttpResponse
 def operate_on_twos(request: HttpRequest) -> HttpResponse: ...

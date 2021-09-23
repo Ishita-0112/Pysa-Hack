@@ -5,7 +5,6 @@ import json
 import shutil
 
 taint_content = {
-    {
   "sources": [
     {
       "name": "CustomUserControlled",
@@ -25,14 +24,14 @@ taint_content = {
   "rules": [
     {
       "name": "Possible RCE:",
-      "code": 5001,
+      "code": 5003,
       "sources": [ "CustomUserControlled" ],
       "sinks": [ "CodeExecution" ],
       "message_format": "User specified data may reach a code execution sink"
     }
   ]
 }
-}
+
 
 model_content = """
 django.http.request.HttpRequest.GET: TaintSource[CustomUserControlled] = ...
@@ -72,6 +71,8 @@ def init(config_path):
         shutil.rmtree(stubs_path)
     os.mkdir(stubs_path)
     os.mkdir(os.path.join(stubs_path, "PysaCoolCli"))
+    with open(os.path.join(stubs_path, "PysaCoolCli", "PysaCoolCli.pyi"), "w") as fp:
+        fp.write(stubs_content)
     click.echo("Created stubs directory...")
     model_path = os.path.join(config_path, "models.pysa")
     with open(model_path, 'w') as fp:

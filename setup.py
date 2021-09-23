@@ -17,6 +17,6 @@ setup(
     ],
     entry_points='''
         [console_scripts]
-        PysaCoolCli=PysaCoolCli.commands:PysaCoolCli
+        PysaCoolCli=src.commands:PysaCoolCli
     ''',
 )
